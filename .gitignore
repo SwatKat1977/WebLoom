@@ -1,0 +1,12 @@
+# Visual Studio specific
+.vs
+x64
+WebLoom.vcxproj.user
+DevTest.vcxproj.user
+
+# Linux / MacOS specific
+*.o
+bin
+
+# Log files
+*.log

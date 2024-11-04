@@ -9,7 +9,7 @@
 namespace webloom {
 
 Context::Context(std::string contextName, WebLoomSettings *settings)
-       : context_name_(contextName), initialised_(false), logger_(nullptr) {
+       : context_name_(contextName), logger_(nullptr) {
     auto staticDir = settings->StaticWebsiteDir();
     if (staticDir.empty() || staticDir.back() != '/') {
         // Append '/' at the end of the path as one doesn't exist.

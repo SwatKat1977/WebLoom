@@ -24,7 +24,6 @@ class Context {
 
  private:
      std::string context_name_;
-     bool initialised_;
      core::Logger *logger_;
      WebLoomSettings *settings_;
      core::FileServer *fileserver_;

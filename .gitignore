@@ -1,0 +1,35 @@
+# Visual Studio specific
+.vs
+x64
+WebLoom.vcxproj.user
+DevTest.vcxproj.user
+
+# Linux / MacOS specific
+*.o
+bin
+
+# Autoconf intermediate files
+*.lo
+.libs/
+.deps/
+config.guess
+config.status
+config.sub
+configure
+depcomp
+missing
+libtool
+/compile
+install-sh
+ltmain.sh
+aclocal.m4
+autom4te.cache/
+.dirstamp
+Makefile.in
+/m4/
+/Makefile
+src/Makefile
+src/WebLoom/Makefile
+src/WebLoom/libWebLoom.la
+# Log files
+*.log

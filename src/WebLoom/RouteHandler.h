@@ -48,10 +48,10 @@ class RouteHandler {
 
 // Macro to register routes with a user-defined handler function
 #define WEBLOOM_ROUTE(path, methods, handler) \
-    static const bool _registered_##__LINE__ = \
-        (webloom::RouteHandler::Instance().AddRoute( \
+    do { \
+        (void)(webloom::RouteHandler::Instance().AddRoute( \
             path, \
             methods, \
-            [this](webloom::Request *req) { return this->handler(req); }), true)
-
+            [this](webloom::Request *req) { return this->handler(req); })); \
+    } while (0)
 #endif  // ROUTEHANDLER_H_

@@ -10,32 +10,9 @@ WebLoom is a modern C++ 17 html framework.
 ## Documentation
 
 - [Getting Started](PLACEHOLDER)
-- [Building On Linux](PLACEHOLDER)
-- [Building On Windows](PLACEHOLDER)
-
-## Dependencies
-
-### SPD
-
-Dependency : https://github.com/gabime/spdlog
-
-Environment Variable : WEBLOOM_SDP_INC
-
-### libMagic
-
-#### Windows
-
-Environment Variable : WEBLOOM_LIBMAGIC_INC, WEBLOOM_LIBMAGIC_LIB
-
-* git clone https://github.com/microsoft/vcpkg.git
-* cd vcpkg
-* .\bootstrap-vcpkg.bat
-* .\vcpkg install libmagic
-
-The libMagic file is stored in a different place on Windows so you will need to
-set WEBLOOM_LIBMAGIC_FILE. The location will be:
-
-    {vcpkg path}\packages\libmagic_x64-windows\share\libmagic\misc\magic.mgc
+- [Building On Linux](https://github.com/SwatKat1977/WebLoom/wiki/Building-On-Linux)
+- [Building On Windows](https://github.com/SwatKat1977/WebLoom/wiki/Building-On-Windows)
+- [Roadmap](https://github.com/SwatKat1977/WebLoom/wiki/Roadmap)
 
 ## To build
 

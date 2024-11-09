@@ -31,6 +31,7 @@
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="RouteHandler.cpp" />
+    <ClCompile Include="Templater.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Platform.h">
@@ -69,5 +70,7 @@
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="RouteHandler.h" />
+    <ClInclude Include="Templater.h" />
+    <ClInclude Include="WebLoomExceptions.h" />
   </ItemGroup>
 </Project>

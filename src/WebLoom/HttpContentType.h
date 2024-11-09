@@ -5,7 +5,7 @@
 #define HTTPCONTENTTYPE_H_
 #include <string>
 
-namespace webloom::core {
+namespace webloom {
 
 enum class HttpContentType {
     // Text types

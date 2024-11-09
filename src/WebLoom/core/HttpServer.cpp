@@ -81,14 +81,14 @@ void HttpServer::HandleClientRequest(SOCKET clientSocket) {
 
         std::optional<Response *> response = nullptr;
 
-        if (RouteHandler::Instance().IsValidRoute(request->Path(), request->Method())) {
+        if (RouteHandler::Instance().IsValidRoute(request->Path(),
+                                                  request->Method())) {
             response = RouteHandler::Instance().HandleRequest(request->Path(),
                                                               request->Method(),
                                                               request);
-        }
-        else {
+        } else {
             auto httpStatus = core::HttpStatus::OK;
-            auto contentType = core::HttpContentType::TextPlain;
+            auto contentType = HttpContentType::TextPlain;
             std::string body = "";
 
             // Remove any leading '/' from the route as
@@ -100,8 +100,7 @@ void HttpServer::HandleClientRequest(SOCKET clientSocket) {
             if (!servedFileDetails) {
                 body = "<html><body><h1>404 Page Not Found</h1></body></html>";
                 httpStatus = core::HttpStatus::NotFound;
-            }
-            else {
+            } else {
                 body = servedFileDetails->contents;
                 contentType = servedFileDetails->contentType;
             }

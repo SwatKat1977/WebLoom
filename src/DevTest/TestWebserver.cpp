@@ -13,6 +13,8 @@
 #include "RequestMethod.h"
 #include "Response.h"
 #include "RouteHandler.h"
+#include "Templater.h"
+#include "WebLoomExceptions.h"
 
 class AdminWebsite {
 public:
@@ -25,7 +27,7 @@ public:
         std::string body = "<html><head><title>I am a teapot</title></head><body>Test</body></html>";
         return new webloom::Response(
             webloom::core::HttpStatus::OK,
-            body, webloom::core::HttpContentType::TextHTML);
+            body, webloom::HttpContentType::TextHTML);
     }
 };
 
@@ -66,7 +68,16 @@ int main() {
     loggerSettings.MaxFileSize(40960);
 
     auto *server = context->CreateServer(loggerSettings);
-    server->Run();
+
+    try {
+        webloom::Templater::Instance ().RenderTemplate("test.html");
+    }
+    catch(webloom::TemplateNotFound &ex) {
+        std::cout << "[EXCEPTION] " << ex.what () << "\n";
+        return EXIT_FAILURE;
+    }
+
+    //server->Run();
 
     return EXIT_SUCCESS;
 }

@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include "HttpContentType.h"
 
-namespace webloom::core {
+namespace webloom {
 
 const std::unordered_map<std::string, HttpContentType> contentTypeMap = {
     {"text/plain", HttpContentType::TextPlain},

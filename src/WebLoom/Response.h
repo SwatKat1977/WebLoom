@@ -16,7 +16,7 @@ class Response {
  public:
     Response(core::HttpStatus statusCode,
              const std::string body,
-             core::HttpContentType contentType);
+             HttpContentType contentType);
 
     core::HttpStatus StatusCode() const { return status_code_; }
 
@@ -25,13 +25,13 @@ class Response {
 
     const std::string &Body() { return body_; }
 
-    core::HttpContentType ContentType() const { return content_type_; }
+    HttpContentType ContentType() const { return content_type_; }
 
  private:
     core::HttpStatus status_code_;
     Header header_;
     std::string body_;
-    core::HttpContentType content_type_;
+    HttpContentType content_type_;
 };
 
 }   // namespace webloom

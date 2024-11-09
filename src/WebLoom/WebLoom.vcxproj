@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>.;$(WEBLOOM_SPD_INC);$(WEBLOOM_LIBMAGIC_INC);$(IncludePath)</IncludePath>
+    <IncludePath>.;$(WEBLOOM_SPD_INC);$(WEBLOOM_LIBMAGIC_INC);$(WEBLOOM_INJA_INC);$(WEBLOOM_NLOHMANN_INC);$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\</OutDir>
     <TargetName>$(ProjectName)$(Configuration)</TargetName>
     <LibraryPath>$(WEBLOOM_LIBMAGIC_LIB);$(LibraryPath)</LibraryPath>
@@ -161,6 +161,8 @@
     <ClInclude Include="Response.h" />
     <ClInclude Include="RouteHandler.h" />
     <ClInclude Include="SocketDefinitions.h" />
+    <ClInclude Include="Templater.h" />
+    <ClInclude Include="WebLoomExceptions.h" />
     <ClInclude Include="WebLoomSettings.h" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +181,7 @@
     <ClCompile Include="Request.cpp" />
     <ClCompile Include="Response.cpp" />
     <ClCompile Include="RouteHandler.cpp" />
+    <ClCompile Include="Templater.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

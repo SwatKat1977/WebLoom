@@ -7,7 +7,7 @@ namespace webloom {
 
 Response::Response(core::HttpStatus statusCode,
                    const std::string body,
-                   core::HttpContentType contentType)
+                   HttpContentType contentType)
          : status_code_(statusCode), header_(Header()), body_(body),
            content_type_(contentType) {
 }

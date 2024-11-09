@@ -71,6 +71,6 @@ std::string HttpContentTypeString(HttpContentType type);
 
 HttpContentType HttpContentTypeStringToEnum(const std::string& typeStr);
 
-}   // namespace webloom::core
+}   // namespace webloom
 
 #endif  // HTTPCONTENTTYPE_H_

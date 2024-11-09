@@ -159,4 +159,4 @@ HttpContentType HttpContentTypeStringToEnum(const std::string& typeStr) {
     throw std::invalid_argument("Unknown content type: " + typeStr);
 }
 
-}   // namespace webloom::core
+}   // namespace webloom

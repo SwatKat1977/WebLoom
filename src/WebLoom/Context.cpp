@@ -5,11 +5,12 @@
 #include "core/Platform.h"
 #include "core/HttpServer.h"
 #include "Context.h"
+#include "Templater.h"
 
 namespace webloom {
 
 Context::Context(std::string contextName, WebLoomSettings *settings)
-       : context_name_(contextName), logger_(nullptr) {
+       : context_name_(contextName), logger_(nullptr), fileserver_(nullptr) {
     auto staticDir = settings->StaticWebsiteDir();
     if (staticDir.empty() || staticDir.back() != '/') {
         // Append '/' at the end of the path as one doesn't exist.
@@ -33,6 +34,8 @@ core::IServer *Context::CreateServer(const core::LoggerSettings& logSettings) {
     std::string libmagicDB = settings_->LibmagicDB();
     const char* dbPath = (libmagicDB.empty()) ? nullptr : libmagicDB.c_str();
     fileserver_ = new core::FileServer(logger_, dbPath);
+
+    Templater::Instance().Initialise(logger_, settings_, fileserver_);
 
     return new core::HttpServer(logger_, settings_, fileserver_);
 }

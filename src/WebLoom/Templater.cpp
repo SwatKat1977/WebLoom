@@ -42,23 +42,30 @@ public:
 Response *Templater::RenderTemplate(std::string filename,
                                     TemplateArguments args) {
     std::string templateFile = settings_->TemplatesDir() + filename;
+    nlohmann::json data;
 
     auto fileData = fileserver_->ServeFile(templateFile);
     if (!fileData) {
         throw TemplateNotFound("Unable to find file '" + templateFile + "'");
     }
 
-    std::string template_text = "Hello, {{ name }}! Welcome to {{ place }}.";
-    nlohmann::json data;
-    data["name"] = "Alice";
-    data["place"] = "Wonderland";
+    for (const auto& pair : args) {
+        data[pair.first] = pair.second;
+    }
 
-    std::string result = impl_->env.render (template_text, data);
-    std::cout << result << std::endl;  // Outputs: Hello, Alice! Welcome to Wonderland.
+    try {
+        std::string rendered = impl_->inja_environment.render(
+            fileData->contents, data);
+        return new Response(core::HttpStatus::OK,
+                            rendered,
+                            fileData->contentType);
+    }
+    catch (const inja::RenderError& ex) {
+        std::string exception = "Render error: " + std::string(ex.what());
+        throw TemplateRenderFailed(exception);
+    }
 
-    return new Response(core::HttpStatus::OK,
-                        fileData->contents,
-                        fileData->contentType);
+    return nullptr;
 }
 
 /**

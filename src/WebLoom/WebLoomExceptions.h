@@ -4,6 +4,7 @@
 #ifndef WEBLOOMEXCEPTIONS_H_
 #define WEBLOOMEXCEPTIONS_H_
 #include <stdexcept>
+#include <string>
 
 namespace webloom {
 
@@ -21,13 +22,13 @@ class WebLoomBaseException : public std::exception {
 };
 
 class TemplateNotFound : public WebLoomBaseException {
-public:
+ public:
     explicit TemplateNotFound(const std::string& message)
         : WebLoomBaseException(message) {}
 };
 
 class TemplateRenderFailed : public WebLoomBaseException {
-public:
+ public:
     explicit TemplateRenderFailed(const std::string& message)
         : WebLoomBaseException(message) {}
 };

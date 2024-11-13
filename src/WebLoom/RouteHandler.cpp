@@ -63,13 +63,13 @@ std::optional<webloom::Response *> RouteHandler::HandleRequest(
 
 bool RouteHandler::IsValidRoute(const std::string& route,
                                 RequestMethod method) {
-    auto it = routes_.find (route);
-    if (it != routes_.end ()) {
+    auto it = routes_.find(route);
+    if (it != routes_.end()) {
         const auto& entry = it->second;
 
         if (std::find(entry.methods.begin(),
-                      entry.methods.end (),
-                      method) != entry.methods.end ()) {
+                      entry.methods.end(),
+                      method) != entry.methods.end()) {
             return true;
         }
     }

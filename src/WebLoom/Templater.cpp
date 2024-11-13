@@ -19,7 +19,7 @@
 namespace webloom {
 
 class Templater::Implementation {
-public:
+ public:
     inja::Environment inja_environment;
 };
 

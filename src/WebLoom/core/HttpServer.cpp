@@ -92,11 +92,11 @@ void HttpServer::HandleClientRequest(SOCKET clientSocket) {
             std::string body = "";
 
             // Remove any leading '/' from the route as
-            if (!route.empty () && route.front () == '/') {
-                route.erase (0, 1);
+            if (!route.empty() && route.front() == '/') {
+                route.erase(0, 1);
             }
 
-            auto servedFileDetails = file_server_->ServeFile (route);
+            auto servedFileDetails = file_server_->ServeFile(route);
             if (!servedFileDetails) {
                 body = "<html><body><h1>404 Page Not Found</h1></body></html>";
                 httpStatus = core::HttpStatus::NotFound;

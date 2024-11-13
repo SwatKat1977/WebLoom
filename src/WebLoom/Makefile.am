@@ -4,7 +4,9 @@
 AM_CPPFLAGS = -g -std=c++17 -Wall -Wextra -fPIC \
               -I. \
               -I$(WEBLOOM_SPD) \
-              -I$(WEBLOOM_LIBMAGIC_INC)
+              -I$(WEBLOOM_LIBMAGIC_INC) \
+              -I$(WEBLOOM_INJA_INC)\
+              -I$(WEBLOOM_NLOHMANN_INC)
 
 # Install header files
 nobase_include_HEADERS = Context.h \
@@ -15,6 +17,7 @@ nobase_include_HEADERS = Context.h \
                   Response.h \
                   RouteHandler.h \
                   SocketDefinitions.h \
+                  Templater.h \
                   WebLoomSettings.h \
                   core/FileServer.h \
                   core/HttpServer.h \
@@ -40,6 +43,7 @@ libWebLoom_la_SOURCES = Context.cpp \
                         Request.cpp \
                         Response.cpp \
                         RouteHandler.cpp \
+                        Templater.cpp \
                         core/FileServer.cpp \
                         core/HttpServer.cpp \
                         core/HttpStatus.cpp \

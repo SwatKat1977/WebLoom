@@ -1,10 +1,15 @@
 //  WebLoom Framework
 //  Copyright (C) 2024 WebLoom Framework contributors
 //  Released under LGPL 3.0 license (see LICENSE)
-#pragma warning(push)
-#pragma warning(disable : 4244)
+#include "core/Platform.h"
+#if (WEBLOOM_PLATFORM == WEBLOOM_PLATFORM_WINDOWS_MSVC)
+#  pragma warning(push)
+#  pragma warning(disable : 4244)
+#endif
 #include <inja/inja.hpp>
-#pragma warning(pop)
+#if (WEBLOOM_PLATFORM == WEBLOOM_PLATFORM_WINDOWS_MSVC)
+#  pragma warning(pop)
+#endif
 #include <nlohmann/json.hpp>
 #include "Templater.h"
 #include "HttpContentType.h"

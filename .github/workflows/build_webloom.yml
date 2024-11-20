@@ -1,0 +1,14 @@
+name: Build Webloom
+
+# Schedule the job to run at 2 AM every day (UTC time)
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Runs at 2 AM UTC daily
+
+jobs:
+    build:
+        runs-on: ubuntu-24.04
+        steps:
+
+        - name: Set up QEMU
+          uses: docker/setup-qemu-action@v3

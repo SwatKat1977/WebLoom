@@ -3,6 +3,8 @@
 x64
 WebLoom.vcxproj.user
 DevTest.vcxproj.user
+UnitTests.vcxproj.user
+/src/packages/
 
 # Linux / MacOS specific
 *.o

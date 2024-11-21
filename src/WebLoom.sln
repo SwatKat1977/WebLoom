@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebLoom", "WebLoom\WebLoom.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DevTest", "DevTest\DevTest.vcxproj", "{CBE8A7C7-BF10-4702-A06F-4430519E7E32}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTests", "UnitTests\UnitTests.vcxproj", "{83BF0B9B-E6DE-48B1-A2F0-72292B1CA4A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{CBE8A7C7-BF10-4702-A06F-4430519E7E32}.Release|x64.Build.0 = Release|x64
 		{CBE8A7C7-BF10-4702-A06F-4430519E7E32}.Release|x86.ActiveCfg = Release|Win32
 		{CBE8A7C7-BF10-4702-A06F-4430519E7E32}.Release|x86.Build.0 = Release|Win32
+		{83BF0B9B-E6DE-48B1-A2F0-72292B1CA4A0}.Debug|x64.ActiveCfg = Debug|x64
+		{83BF0B9B-E6DE-48B1-A2F0-72292B1CA4A0}.Debug|x64.Build.0 = Debug|x64
+		{83BF0B9B-E6DE-48B1-A2F0-72292B1CA4A0}.Debug|x86.ActiveCfg = Debug|Win32
+		{83BF0B9B-E6DE-48B1-A2F0-72292B1CA4A0}.Debug|x86.Build.0 = Debug|Win32
+		{83BF0B9B-E6DE-48B1-A2F0-72292B1CA4A0}.Release|x64.ActiveCfg = Release|x64
+		{83BF0B9B-E6DE-48B1-A2F0-72292B1CA4A0}.Release|x64.Build.0 = Release|x64
+		{83BF0B9B-E6DE-48B1-A2F0-72292B1CA4A0}.Release|x86.ActiveCfg = Release|Win32
+		{83BF0B9B-E6DE-48B1-A2F0-72292B1CA4A0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
